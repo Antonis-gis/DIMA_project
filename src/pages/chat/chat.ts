@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {AngularFireDatabase, AngularFireList} from 'angularfire2/database'
 
 /**
  * Generated class for the ChatPage page.
@@ -15,12 +16,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ChatPage {
 selectedPoll: any;
+username: string="";
+message: string="";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public db:AngularFireDatabase) {
 this.selectedPoll = navParams.get('poll');
+this.username = "whatever";
+this.message= "omagad";
   }
 
   ionViewDidLoad() {
+    this.db.list('/chat').push({
+      username: this.username,
+      message: this.message
+      
+    })
+
+
     console.log('ionViewDidLoad ChatPage');
   }
 
