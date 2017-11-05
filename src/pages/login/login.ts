@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, AlertController } from 'ionic-angular';
+import { HomePage } from '../home/home';
 
 import firebase from 'firebase';
 
@@ -37,6 +38,10 @@ export class LoginPage {
                 .then(function (result) {
                   // User signed in successfully.
                   console.log(result.user);
+//this.navCtrl.setRoot(HomePage);
+//this.navCtrl.popToRoot();
+this.navCtrl.push(HomePage, {
+    });
                   // ...
                 }).catch(function (error) {
                   // User couldn't sign in (bad verification code?)

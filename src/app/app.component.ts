@@ -10,7 +10,7 @@ import { HomePage } from '../pages/home/home';
 })
 
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage:any;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     const firebaseConfig = {
