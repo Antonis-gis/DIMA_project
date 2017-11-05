@@ -14,10 +14,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'chat.html',
 })
 export class ChatPage {
-selectedChat: any;
+selectedPoll: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-this.selectedChat = navParams.get('chat');
+this.selectedPoll = navParams.get('poll');
   }
 
   ionViewDidLoad() {

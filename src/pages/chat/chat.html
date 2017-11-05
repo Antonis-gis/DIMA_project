@@ -1,17 +1,22 @@
 <ion-header>
   <ion-navbar>
-    <button menuToggle *ngIf="!selectedChat">
+    <button menuToggle *ngIf="!selectedPoll">
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>{{selectedChat}}</ion-title>
+    <ion-title>{{selectedPoll.title}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <h3 text-center *ngIf="selectedChat">
-    {{selectedChat.title}}
+  <h3 text-center *ngIf="selectedPoll">
+    {{selectedPoll.title}}
   </h3>
-  <h4 text-center *ngIf="selectedChat">
-    You navigated here from <b>{{selectedChat.title}}</b>
+  <h4 text-center *ngIf="selectedPoll">
+    You navigated here from <b>{{selectedPoll.title}}</b>
   </h4>
+<ion-list inset>
+  <ion-item ion-item *ngFor="let item of selectedPoll.items" >
+    {{ item }}
+  </ion-item> 
+</ion-list>
 </ion-content>

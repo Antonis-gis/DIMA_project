@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Chats</ion-title>
+    <ion-title>Polls</ion-title>
 
 
 <ion-buttons right> 
@@ -16,7 +16,7 @@
 <ion-content>
 
     <ion-list>
-        <ion-item *ngFor="let chat of chats"  (click)="chatTapped($event, chat)">{{chat}}</ion-item>
+        <ion-item *ngFor="let poll of polls"  (click)="chatTapped($event, poll)">{{poll.title}}</ion-item>
     </ion-list>
 
 </ion-content>
